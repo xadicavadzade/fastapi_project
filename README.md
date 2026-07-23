@@ -1,8 +1,11 @@
 # 🌿 Carpe Diem — Photo & Video Sharing App
 
 A full-stack media sharing application built with **FastAPI** (backend) and **Streamlit** (frontend), featuring JWT authentication, cloud image/video storage via **ImageKit**, and a clean, minimal UI.
-url : https://fastapi-project-1-wuqb.onrender.com
 ---
+
+url : https://fastapi-project-1-wuqb.onrender.com
+
+
 
 <img width="1917" height="892" alt="image" src="https://github.com/user-attachments/assets/51727072-1fcd-4d13-8a63-d5000d2a3eb1" />
 <img width="1913" height="900" alt="image" src="https://github.com/user-attachments/assets/4ceea9be-ecab-4ad6-ab38-99555b9b78dc" />
