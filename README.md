@@ -6,8 +6,8 @@ url : https://fastapi-project-1-wuqb.onrender.com
 
 <img width="1917" height="892" alt="image" src="https://github.com/user-attachments/assets/51727072-1fcd-4d13-8a63-d5000d2a3eb1" />
 <img width="1913" height="900" alt="image" src="https://github.com/user-attachments/assets/4ceea9be-ecab-4ad6-ab38-99555b9b78dc" />
-<img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/1b5885f4-b8ff-4d40-9f4e-96ed4ed0cb7b" />
-<img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/3f8ad72d-9b2d-4735-a9e9-e4619ca3e8bd" />
+<img width="1917" height="902" alt="image" src="https://github.com/user-attachments/assets/d0b61195-24ce-4986-8259-eb2d06db7bfe" />
+
 
 <img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/377f68ed-5db1-44fe-abfc-12a366796d80" />
 
