@@ -13,7 +13,7 @@ A modern full-stack social media application built with **FastAPI**, **Streamlit
 > https://fastapi-project-1-wuqb.onrender.com
 
 ### API Documentation
-> https://fastapi-project-1-wuqb.onrender.com/docs
+> https://fastapi-project-66ph.onrender.com/docs
 
 ---
 
