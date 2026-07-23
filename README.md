@@ -6,10 +6,10 @@ A modern full-stack social media application built with **FastAPI**, **Streamlit
 
 ## 🌍 Live Demo
 
-### Frontend
-> https://YOUR-FRONTEND.onrender.com
-
 ### Backend API
+> https://fastapi-project-66ph.onrender.com
+
+### Frontend
 > https://fastapi-project-1-wuqb.onrender.com
 
 ### API Documentation
