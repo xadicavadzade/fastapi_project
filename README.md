@@ -1,204 +1,353 @@
-# 🌿 Carpe Diem — Photo & Video Sharing App
+# 🌿 Carpe Diem — Photo & Video Sharing Platform
 
-A full-stack media sharing application built with **FastAPI** (backend) and **Streamlit** (frontend), featuring JWT authentication, cloud image/video storage via **ImageKit**, and a clean, minimal UI.
----
-
-url : https://fastapi-project-1-wuqb.onrender.com
-
-
-
-<img width="1917" height="892" alt="image" src="https://github.com/user-attachments/assets/51727072-1fcd-4d13-8a63-d5000d2a3eb1" />
-<img width="1913" height="900" alt="image" src="https://github.com/user-attachments/assets/4ceea9be-ecab-4ad6-ab38-99555b9b78dc" />
-<img width="1917" height="902" alt="image" src="https://github.com/user-attachments/assets/d0b61195-24ce-4986-8259-eb2d06db7bfe" />
-
-
-<img width="1918" height="940" alt="image" src="https://github.com/user-attachments/assets/377f68ed-5db1-44fe-abfc-12a366796d80" />
-
-
-
-
-## ✨ Features
-
-- **User Authentication** — Register, login, and logout using JWT tokens (via `fastapi-users`)
-- **Media Upload** — Share photos and videos with optional captions
-- **Live Feed** — Browse all shared moments in reverse chronological order
-- **ImageKit Integration** — Cloud-based media hosting with on-the-fly transformations (caption overlays, video resizing)
-- **Delete Posts** — Owners can delete their own posts
-- **Responsive UI** — Custom-styled Streamlit frontend with a teal aesthetic
+A modern full-stack social media application built with **FastAPI**, **Streamlit**, **SQLAlchemy**, and **ImageKit**. The platform enables users to securely register, upload photos and videos, browse a live community feed, and manage their own posts through a clean and minimal interface.
 
 ---
 
-## 🗂️ Project Structure
+## 🌍 Live Demo
 
+### Frontend
+> https://YOUR-FRONTEND.onrender.com
+
+### Backend API
+> https://fastapi-project-1-wuqb.onrender.com
+
+### API Documentation
+> https://fastapi-project-1-wuqb.onrender.com/docs
+
+---
+
+## 📸 Preview
+
+<p align="center">
+<img width="1917" alt="Login" src="https://github.com/user-attachments/assets/51727072-1fcd-4d13-8a63-d5000d2a3eb1">
+
+<br><br>
+
+<img width="1913" alt="Feed" src="https://github.com/user-attachments/assets/4ceea9be-ecab-4ad6-ab38-99555b9b78dc">
+
+<br><br>
+
+<img width="1917" alt="Upload" src="https://github.com/user-attachments/assets/d0b61195-24ce-4986-8259-eb2d06db7bfe">
+
+<br><br>
+
+<img width="1918" alt="Profile" src="https://github.com/user-attachments/assets/377f68ed-5db1-44fe-abfc-12a366796d80">
+</p>
+
+---
+
+# 📖 Project Overview
+
+Carpe Diem is a cloud-based media sharing application where users can create an account, upload photos and videos, browse posts shared by the community, and manage their own content.
+
+The project demonstrates modern backend development using **FastAPI** together with a Python-based frontend built in **Streamlit**. Authentication is handled with JWT tokens, uploaded media is stored in **ImageKit**, and metadata is managed using **SQLAlchemy** with **SQLite**.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                    User
+                      │
+                      ▼
+           Streamlit Frontend
+               (Render)
+                      │
+                HTTP Requests
+                      │
+                      ▼
+            FastAPI Backend
+               (Render)
+                      │
+      ┌───────────────┴────────────────┐
+      │                                │
+      ▼                                ▼
+ JWT Authentication              ImageKit Cloud
+      │                                │
+      ▼                                ▼
+ SQLAlchemy ORM                  Images & Videos
+      │
+      ▼
+    SQLite
 ```
-FAST_API_/
+
+---
+
+# ✨ Features
+
+- Secure JWT Authentication
+- User Registration & Login
+- Photo Upload
+- Video Upload
+- Optional Image Captions
+- Cloud Media Storage
+- ImageKit Transformations
+- Community Feed
+- Delete Own Posts
+- Responsive Streamlit Interface
+- Async FastAPI Backend
+- Automatic OpenAPI Documentation
+- RESTful API
+
+---
+
+# 🛠️ Technology Stack
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- FastAPI Users
+- SQLite
+- Pydantic
+- Uvicorn
+
+## Frontend
+
+- Streamlit
+- Requests
+
+## Cloud Services
+
+- ImageKit
+
+## Deployment
+
+- Render
+- Docker
+
+---
+
+# 📁 Project Structure
+
+```text
+FAST_API_
 │
 ├── app/
-│   ├── __init__.py
-│   ├── app.py          # FastAPI routes (upload, feed, delete)
-│   ├── db.py           # SQLAlchemy models & async database setup
-│   ├── images.py       # ImageKit client initialization
-│   ├── schema.py       # Pydantic schemas
-│   └── users.py        # fastapi-users config (JWT auth)
+│   ├── app.py
+│   ├── db.py
+│   ├── users.py
+│   ├── schema.py
+│   ├── images.py
+│   └── __init__.py
 │
-├── frontend.py         # Streamlit frontend
-├── main.py             # Uvicorn entry point
-├── .env                # Environment variables (not committed)
-├── .gitignore
-└── test.db             # SQLite database (auto-created)
+├── frontend.py
+├── main.py
+├── requirements.txt
+├── Dockerfile
+├── .env
+└── test.db
 ```
 
 ---
 
-## 🛠️ Tech Stack
+# 🚀 Running Locally
 
-| Layer | Technology |
-|---|---|
-| Backend API | [FastAPI](https://fastapi.tiangolo.com/) |
-| Authentication | [fastapi-users](https://fastapi-users.github.io/) (JWT) |
-| Database ORM | [SQLAlchemy](https://www.sqlalchemy.org/) (async) |
-| Database | SQLite (via `aiosqlite`) |
-| Media Storage | [ImageKit.io](https://imagekit.io/) |
-| Frontend | [Streamlit](https://streamlit.io/) |
-| Server | [Uvicorn](https://www.uvicorn.org/) |
-
----
-
-## ⚙️ Setup & Installation
-
-### 1. Clone the repository
+## Clone Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/your-username/your-repository.git
+
 cd FAST_API_
 ```
 
-### 2. Create and activate a virtual environment
+---
+
+## Create Virtual Environment
 
 ```bash
 python -m venv venv
+```
 
-# Windows
+### Windows
+
+```bash
 venv\Scripts\activate
+```
 
-# macOS / Linux
+### Linux / macOS
+
+```bash
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+---
+
+## Install Dependencies
 
 ```bash
-pip install fastapi uvicorn sqlalchemy aiosqlite fastapi-users[sqlalchemy] imagekitio python-dotenv streamlit requests
+pip install -r requirements.txt
 ```
-
-### 4. Configure environment variables
-
-Create a `.env` file in the project root:
-
-```env
-IMAGEKIT_PUBLIC_KEY=your_public_key_here
-IMAGEKIT_PRIVATE_KEY=your_private_key_here
-IMAGEKIT_URL=https://ik.imagekit.io/your_imagekit_id
-```
-
-> You can find these values in your [ImageKit dashboard](https://imagekit.io/dashboard/developer/api-keys).
 
 ---
 
-## 🚀 Running the Application
+## Configure Environment Variables
 
-### Start the FastAPI backend
+Create a `.env` file.
+
+```env
+IMAGEKIT_PUBLIC_KEY=YOUR_PUBLIC_KEY
+IMAGEKIT_PRIVATE_KEY=YOUR_PRIVATE_KEY
+IMAGEKIT_URL=YOUR_IMAGEKIT_URL
+```
+
+---
+
+## Start Backend
 
 ```bash
 python main.py
 ```
 
-The API will be available at `http://localhost:8000`.  
-Interactive docs: `http://localhost:8000/docs`
+Backend:
 
-### Start the Streamlit frontend
+```
+http://localhost:8000
+```
 
-Open a second terminal (with the virtual environment activated):
+Swagger UI:
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+## Start Frontend
 
 ```bash
 streamlit run frontend.py
 ```
 
-The frontend will open at `http://localhost:8501`.
+Frontend:
+
+```
+http://localhost:8501
+```
 
 ---
 
-## 📡 API Endpoints
+# 📡 REST API
 
-### Authentication
+## Authentication
 
 | Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/auth/register` | Register a new user |
-| `POST` | `/auth/jwt/login` | Login and receive a JWT token |
-| `POST` | `/auth/jwt/logout` | Logout |
-| `GET` | `/users/me` | Get current user info |
+|---------|----------|-------------|
+| POST | `/auth/register` | Register a new account |
+| POST | `/auth/jwt/login` | Login and receive a JWT token |
+| POST | `/auth/jwt/logout` | Logout |
+| GET | `/users/me` | Get authenticated user |
 
-### Posts
+---
+
+## Posts
 
 | Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/upload` | Upload an image or video with a caption |
-| `GET` | `/feed` | Get all posts (newest first) |
-| `DELETE` | `/posts/{post_id}` | Delete a post (owner only) |
-
-All post endpoints require a valid `Authorization: Bearer <token>` header.
+|---------|----------|-------------|
+| POST | `/upload` | Upload an image or video |
+| GET | `/feed` | Retrieve all posts |
+| DELETE | `/posts/{id}` | Delete a post |
 
 ---
 
-## 🗄️ Database Models
+# 🗄️ Database
 
-### `User`
-Extends `SQLAlchemyBaseUserTableUUID` from `fastapi-users`.  
-Has a one-to-many relationship with `Post`.
+## User
 
-### `Post`
-
-| Field | Type | Description |
-|---|---|---|
-| `id` | UUID | Primary key |
-| `user_id` | UUID | Foreign key to `User` |
-| `caption` | Text | Optional post caption |
-| `url` | String | Public ImageKit URL |
-| `file_type` | String | `"image"` or `"video"` |
-| `file_name` | String | Stored filename on ImageKit |
-| `created_at` | DateTime | Upload timestamp |
+- UUID Primary Key
+- Email
+- Password Hash
+- One-to-Many relationship with Posts
 
 ---
 
-## 🖼️ Frontend Pages
+## Post
 
-### Login / Register
-- Email and password input
-- **Login** button authenticates and stores the JWT in session state
-- **Register** button creates a new account
-
-### Feed (`🏠 Axın`)
-- Displays all posts in reverse chronological order
-- Images are rendered with an ImageKit caption overlay transformation
-- Videos are rendered with padding/resize transformation
-- Post owners see a **Delete** button
-
-### Upload (`📎 Paylaş`)
-- File uploader supporting PNG, JPG, MP4, AVI, MOV, MKV, WEBM
-- Optional caption (max 300 characters)
-- Uploads to ImageKit and saves metadata to the database
+| Field | Description |
+|---------|-------------|
+| id | UUID Primary Key |
+| user_id | Post Owner |
+| caption | Optional Caption |
+| url | ImageKit Public URL |
+| file_type | Image / Video |
+| file_name | Stored Filename |
+| created_at | Upload Timestamp |
 
 ---
 
-## 🔐 Security Notes
+# 🔒 Security
 
-- JWT tokens are stored in Streamlit's `session_state` (client-side only)
-- The `SECRET` key in `users.py` should be moved to the `.env` file before deploying to production
-- The app currently uses SQLite; switch to PostgreSQL for production use
+- JWT Authentication
+- Protected API Endpoints
+- Authorization Checks
+- Environment Variables
+- Secure Cloud Storage
+- Owner-only Post Deletion
 
 ---
 
-## 📝 License
+# ☁️ Deployment
 
-This project was built for learning purposes. Feel free to use and extend it.
+## Backend
+
+Hosted on **Render**
+
+```
+https://fastapi-project-1-wuqb.onrender.com
+```
+
+Swagger
+
+```
+https://fastapi-project-1-wuqb.onrender.com/docs
+```
+
+---
+
+## Frontend
+
+Hosted on **Render**
+
+```
+https://YOUR-FRONTEND.onrender.com
+```
+
+---
+
+# 🚀 Future Improvements
+
+- PostgreSQL
+- User Profiles
+- Likes & Comments
+- Follow System
+- Notifications
+- Search
+- Infinite Scrolling
+- Docker Compose
+- CI/CD Pipeline
+- Unit & Integration Tests
+
+---
+
+# 💡 What This Project Demonstrates
+
+This project highlights practical full-stack software engineering skills, including:
+
+- FastAPI Application Development
+- REST API Design
+- JWT Authentication
+- Async SQLAlchemy
+- Database Modeling
+- Cloud Media Storage with ImageKit
+- Streamlit UI Development
+- Docker Containerization
+- Render Deployment
+- Clean Project Architecture
+- Python Backend Development
+
+---
+
+# 📄 License
+
+This project was developed for educational and portfolio purposes.
