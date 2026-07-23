@@ -196,7 +196,7 @@ if 'token' not in st.session_state:
 if 'user' not in st.session_state:
     st.session_state.user = None
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = 'https://fastapi-project-66ph.onrender.com'
 
 
 def get_headers():
